@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Memory Flip Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<div class="game-container">
+<header class="game-header">
+<h1 class="game-title">Memory Master</h1>
+<div class="difficulty-selector">
+<button class="difficulty-btn active" data-level="easy">Easy (4x4)</button>
+<button class="difficulty-btn" data-level="medium">Medium (6x4)</button>
+<button class="difficulty-btn" data-level="hard">Hard (6x6)</button>
+</div>
+<div class="game-stats">
+<div class="stat-item">
+<span class="stat-label">Time</span>
+<span class="stat-value" id="timer">00:00</span>
+</div>
+<div class="stat-item">
+<span class="stat-label">Moves</span>
+<span class="stat-value" id="moves">0</span>
+</div>
+<div class="stat-item">
+<span class="stat-label">Score</span>
+<span class="stat-value" id="score">0</span>
+</div>
+<div class="stat-item">
+<span class="stat-label">Streak</span>
+<span class="stat-value" id="streak">0</span>
+</div>
+</div>
+</header>
+<div class="game-board" id="gameBoard"></div>
+<div class="game-controls">
+<button class="control-btn reset-btn" id="resetBtn">
+<span class="btn-icon">🔄</span>
+New Game
+</button>
+<button class="control-btn hint-btn" id="hintBtn">
+<span class="btn-icon">💡</span>
+Hint (<span id="hintsLeft">3</span>)
+</button>
+<button class="control-btn pause-btn" id="pauseBtn">
+<span class="btn-icon">⏸️</span>
+Pause
+</button>
+</div>
+<div class="leaderboard" id="leaderboard">
+<h3 class="leaderboard-title">🏆 Best Scores</h3>
+<div class="leaderboard-list" id="leaderboardList"></div>
+</div>
+<div class="modal" id="winModal">
+<div class="modal-content win-content">
+<div class="win-emoji">🎉</div>
+<h2 class="win-title">Congratulations!</h2>
+<div class="win-stats">
+<div class="win-stat">
+<span class="win-stat-label">Time</span>
+<span class="win-stat-value" id="finalTime">00:00</span>
+</div>
+<div class="win-stat">
+<span class="win-stat-label">Moves</span>
+<span class="win-stat-value" id="finalMoves">0</span>
+</div>
+<div class="win-stat">
+<span class="win-stat-label">Score</span>
+<span class="win-stat-value" id="finalScore">0</span>
+</div>
+</div>
+<div class="performance-rating" id="performanceRating">
+<div class="rating-stars" id="ratingStars"></div>
+<p class="rating-text" id="ratingText">Excellent!</p>
+</div>
+<button class="play-again-btn" id="playAgainBtn">Play Again</button>
+</div>
+</div>
+<div class="modal" id="pauseModal">
+<div class="modal-content pause-content">
+<h2 class="pause-title">Game Paused</h2>
+<p class="pause-text">Take a break and come back when you're ready!</p>
+<button class="resume-btn" id="resumeBtn">Resume Game</button>
+</div>
+</div>
+</div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
